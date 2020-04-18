@@ -27,25 +27,25 @@ public class ${modelNameUpperCamel}Controller {
     @PostMapping("/add")
     public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.insert(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping("/delete")
     public Result delete(@RequestParam Integer id) {
         ${modelNameLowerCamel}Service.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping("/update")
     public Result update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping("/detail")
     public Result detail(@RequestParam Integer id) {
         ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
-        return ResultGenerator.genSuccessResult(${modelNameLowerCamel});
+        return ResultGenerator.success(${modelNameLowerCamel});
     }
 
     @PostMapping("/list")
@@ -53,6 +53,6 @@ public class ${modelNameUpperCamel}Controller {
         PageHelper.startPage(page, size);
         List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.findAll();
         PageInfo pageInfo = new PageInfo(list);
-        return ResultGenerator.genSuccessResult(pageInfo);
+        return ResultGenerator.success(pageInfo);
     }
 }

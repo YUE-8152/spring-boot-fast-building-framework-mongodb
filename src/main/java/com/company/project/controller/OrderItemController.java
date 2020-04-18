@@ -27,25 +27,25 @@ public class OrderItemController {
     @PostMapping("/add")
     public Result add(@RequestBody OrderItem orderItem) {
         orderItemService.insert(orderItem);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping("/delete")
     public Result delete(@RequestParam Integer id) {
         orderItemService.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping("/update")
     public Result update(@RequestBody OrderItem orderItem) {
         orderItemService.update(orderItem);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PostMapping("/detail")
     public Result detail(@RequestParam Integer id) {
         OrderItem orderItem = orderItemService.findById(id);
-        return ResultGenerator.genSuccessResult(orderItem);
+        return ResultGenerator.success(orderItem);
     }
 
     @PostMapping("/list")
@@ -53,6 +53,6 @@ public class OrderItemController {
         PageHelper.startPage(page, size);
         List<OrderItem> list = orderItemService.findAll();
         PageInfo pageInfo = new PageInfo(list);
-        return ResultGenerator.genSuccessResult(pageInfo);
+        return ResultGenerator.success(pageInfo);
     }
 }

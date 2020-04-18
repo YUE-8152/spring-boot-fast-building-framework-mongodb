@@ -24,25 +24,25 @@ public class ${modelNameUpperCamel}Controller {
     @PostMapping
     public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.insert(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         ${modelNameLowerCamel}Service.deleteById(id);
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @PutMapping
     public Result update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
-        return ResultGenerator.genSuccessResult();
+        return ResultGenerator.success();
     }
 
     @GetMapping("/{id}")
     public Result detail(@PathVariable Integer id) {
         ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
-        return ResultGenerator.genSuccessResult(${modelNameLowerCamel});
+        return ResultGenerator.success(${modelNameLowerCamel});
     }
 
     @GetMapping
@@ -50,6 +50,6 @@ public class ${modelNameUpperCamel}Controller {
         PageHelper.startPage(page, size);
         List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.findAll();
         PageInfo pageInfo = new PageInfo(list);
-        return ResultGenerator.genSuccessResult(pageInfo);
+        return ResultGenerator.success(pageInfo);
     }
 }

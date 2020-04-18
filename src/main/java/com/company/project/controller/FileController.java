@@ -21,7 +21,7 @@ public class FileController {
     @PostMapping("/uploadFile")
     public Result<File> uploadFile(@RequestParam("file") MultipartFile multipartFile) {
         File file = fileService.uploadFileToMongo(multipartFile);
-        return ResultGenerator.genSuccessResult(file);
+        return ResultGenerator.success(file);
     }
 
     /**
@@ -33,7 +33,7 @@ public class FileController {
     @GetMapping(value = "/downloadFile/string")
     public Result<String> downloadFile(@RequestParam("fileId") String fileId) {
         String fileString = fileService.getFileStringByFileId(fileId);
-        return ResultGenerator.genSuccessResult(fileString);
+        return ResultGenerator.success(fileString);
     }
 
     /**
@@ -64,6 +64,6 @@ public class FileController {
     @GetMapping("/deleteFile")
     public Result deleteFileByFileId(@RequestParam("fileId") String fileId) {
         boolean result = fileService.deleteFileByFileId(fileId);
-        return result ? ResultGenerator.genSuccessResult() : ResultGenerator.genFailResult("删除失败！");
+        return result ? ResultGenerator.success() : ResultGenerator.fail("删除失败！");
     }
 }
