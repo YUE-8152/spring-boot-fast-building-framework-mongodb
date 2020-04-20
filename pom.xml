@@ -112,11 +112,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
-        </dependency>
         <!--MongoDB-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -125,24 +120,11 @@
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.28</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
             <version>1.3.7</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator-core</artifactId>
-            <version>1.3.7</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 
